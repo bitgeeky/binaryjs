@@ -19,8 +19,15 @@ client.on('stream', function(stream, meta){
             vid.type = "video/webm";
             vid.autoplay = "true";
             vid.loop = "loop";
-           //vid.controls = "controls"; to show controls if you want 
+        //  vid.controls = "controls"; to show controls if you want 
 
+            /** Note :
+                document.body.appendChild(vid); will append the video to the bottom of body
+                In most cases if you have already defined a div with an id and want to put 
+                video in it do :
+                var theDiv = document.getElementById("Id_of_div_element");
+                theDiv.append(vid);
+            *****/
             document.body.appendChild(vid);
             });
         });
